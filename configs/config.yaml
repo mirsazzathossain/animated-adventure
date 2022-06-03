@@ -1,0 +1,19 @@
+- model_params:
+    in_size: 32
+    name: LitResnet
+    num_classes: 10
+- exp_params:
+    accelerator: auto
+    batch_size: 256
+    devices: -1
+    lr: 0.05
+    max_epochs: 30
+    max_lr: 0.1
+    momentum: 0.9
+    num_workers: 16
+    path_dataset: data/cifar10
+    weight_decay: 0.0005
+- logging_params:
+    manual_seed: 7
+    name: LitResnet
+    save_dir: logs/lit_resnet
