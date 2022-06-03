@@ -4,6 +4,7 @@ This code is based on the [PyTorch Lightning CIFAR10 ~94% Baseline Tutorial](htt
 
 # Setup
  - Create a virtual environment using `python -m venv venv`
+ - Activate the virtual environment using `source venv/bin/activate`
  - Run `pip install -r requirements.txt` to install the required packages.
  - Edit the `utils/setup_configs.py` file to change the hyperparameters.
  - Run `setup_configs.py' to create the `configs/configs.yaml` file.
