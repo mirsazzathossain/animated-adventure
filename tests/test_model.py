@@ -7,7 +7,7 @@ root = pathlib.Path(__file__).parent.parent
 sys.path.append(str(root))
 
 from models.lit_resnet import LitResnet
-from configs.setup_configs import load_config
+from utils.setup_configs import load_config
 
 
 class TestModel(unittest.TestCase):

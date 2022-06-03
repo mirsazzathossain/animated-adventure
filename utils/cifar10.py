@@ -1,5 +1,5 @@
 from torchvision.datasets import CIFAR10
-from configs.setup_configs import load_config
+from utils.setup_configs import load_config
 import pytorch_lightning as pl
 from preprocessing.transforms import *
 from torch.utils.data import DataLoader, random_split

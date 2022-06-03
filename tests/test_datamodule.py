@@ -5,7 +5,7 @@ import unittest
 root = pathlib.Path(__file__).parent.parent
 sys.path.append(str(root))
 
-from data.cifar10 import Cifar10DataModule
+from utils.cifar10 import Cifar10DataModule
 
 class TestCifar10DataModule(unittest.TestCase):
     EXPECTED_DIME = (3, 32, 32)

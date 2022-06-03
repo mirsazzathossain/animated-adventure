@@ -1,12 +1,12 @@
 
 
-from configs.setup_configs import load_config
-from data.cifar10 import Cifar10DataModule
+from utils.setup_configs import load_config
+from utils.cifar10 import Cifar10DataModule
 from models.lit_resnet import LitResnet
 from pytorch_lightning import Trainer
 from pytorch_lightning import Trainer
-from data.cifar10 import Cifar10DataModule
-from configs.setup_configs import load_config
+from utils.cifar10 import Cifar10DataModule
+from utils.setup_configs import load_config
 from models.lit_resnet import LitResnet
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.callbacks import LearningRateMonitor, TQDMProgressBar, ModelCheckpoint
