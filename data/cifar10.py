@@ -33,7 +33,7 @@ class Cifar10DataModule(pl.LightningDataModule):
             cifar10_full = CIFAR10(self.data_dir, train=True, transform=self.train_transforms)
             self.cifar10_train, self.cifar10_val = random_split(cifar10_full, [40000, 10000])
 
-        if stage == 'test':
+        if stage == 'test' or stage is None:
             self.cifar10_test = CIFAR10(root=self.data_dir, train=False, transform=self.test_transforms)
 
     def train_dataloader(self):
