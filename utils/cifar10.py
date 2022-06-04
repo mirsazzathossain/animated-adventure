@@ -9,7 +9,7 @@ config = load_config()
 
 class Cifar10DataModule(pl.LightningDataModule):
     def __init__(
-        self, data_dir: str = config[1]['exp_params']['path_dataset'], batch_size: int = config[1]['exp_params']['batch_size'], num_workers: int = config[1]['exp_params']['num_workers']
+        self, data_dir: str = config['exp_params']['path_dataset'], batch_size: int = config['exp_params']['batch_size'], num_workers: int = config['exp_params']['num_workers']
         ):
         super().__init__()
         self.data_dir = data_dir

@@ -2,16 +2,12 @@ import os
 import torch
 import yaml
 
-config = [
-    {
+config = {
         'model_params': {
             'name': 'LitResnet',
             'in_size': 32,
             'num_classes': 10,
         },
-    },
-
-    {
         'exp_params': {
             'lr': 0.05,
             'max_lr': 0.1,
@@ -24,16 +20,12 @@ config = [
             'devices': -1 if torch.cuda.is_available() else None,
             'path_dataset': 'data/cifar10',
         },
-    },
-
-    {
         'logging_params': {
             'save_dir': 'logs/lit_resnet',
             'name': 'LitResnet',
             'manual_seed': 7,
         },
-    },
-]
+    }
 
 def write_config():
     """
@@ -43,7 +35,7 @@ def write_config():
         None
     """
     with open("configs/config.yaml", "w") as f:
-        yaml.dump(config, f)
+        yaml.dump(config, f, default_flow_style=False)
 
 def load_config():
     """

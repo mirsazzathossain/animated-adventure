@@ -15,19 +15,19 @@ if __name__ == '__main__':
 
     configs = load_config()
 
-    seed_everything(configs[2]['logging_params']['manual_seed'])
+    seed_everything(configs['logging_params']['manual_seed'])
 
     model = LitResnet(
-            lr = configs[1]['exp_params']['lr'],
-            momentum = configs[1]['exp_params']['momentum'],
-            weight_decay = configs[1]['exp_params']['weight_decay'],
-            batch_size = configs[1]['exp_params']['batch_size'],
-            max_lr = configs[1]['exp_params']['max_lr'],
+            lr = configs['exp_params']['lr'],
+            momentum = configs['exp_params']['momentum'],
+            weight_decay = configs['exp_params']['weight_decay'],
+            batch_size = configs['exp_params']['batch_size'],
+            max_lr = configs['exp_params']['max_lr'],
         )
 
     wandb_logger = WandbLogger(
         project='CIFAR10_LitResnet', 
-        name=configs[0]['model_params']['name'], 
+        name=configs['model_params']['name'], 
         log_model=all,
         save_dir = 'results/'
     )
@@ -47,9 +47,9 @@ if __name__ == '__main__':
     ]
 
     trainer = Trainer(
-        max_epochs = configs[1]['exp_params']['max_epochs'],
-        accelerator = configs[1]['exp_params']['accelerator'],
-        devices = configs[1]['exp_params']['devices'],
+        max_epochs = configs['exp_params']['max_epochs'],
+        accelerator = configs['exp_params']['accelerator'],
+        devices = configs['exp_params']['devices'],
         logger = wandb_logger,
         callbacks = callbacks,
     )

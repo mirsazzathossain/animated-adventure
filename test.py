@@ -17,13 +17,13 @@ from pytorch_lightning.utilities.seed import seed_everything
 if __name__ == '__main__':
     configs = load_config()
 
-    seed_everything(configs[2]['logging_params']['manual_seed'])
+    seed_everything(configs['logging_params']['manual_seed'])
 
     model = LitResnet.load_from_checkpoint('results/CIFAR10_LitResnet/3jmxcq8l/checkpoints/results/checkpoint/epoch=26-valid_loss=0.0000-valid_f1=0.0000.ckpt')
 
     wandb_logger = WandbLogger(
         project='CIFAR10_LitResnet', 
-        name=configs[0]['model_params']['name'], 
+        name=configs['model_params']['name'], 
         log_model=all,
         save_dir = 'results/'
     )
@@ -43,9 +43,9 @@ if __name__ == '__main__':
     ]
 
     trainer = Trainer(
-        max_epochs = configs[1]['exp_params']['max_epochs'],
-        accelerator = configs[1]['exp_params']['accelerator'],
-        devices = configs[1]['exp_params']['devices'],
+        max_epochs = configs['exp_params']['max_epochs'],
+        accelerator = configs['exp_params']['accelerator'],
+        devices = configs['exp_params']['devices'],
         logger = wandb_logger,
         callbacks = callbacks,
     )
